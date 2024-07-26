@@ -21,22 +21,3 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-local InfoServer = Tab:AddSection({Name = "Players"})
-game:GetService("RunService").RenderStepped:Connect(function()pcall(function()if _G.speedkuys then game.Players.LocalPlayer.Character.Humanoid.WalkSpeed=_G.SelectBootst;end end);end);game:GetService("RunService").RenderStepped:Connect(function()pcall(function()if (_G.SpeedHack and (game.Players.LocalPlayer.Character.Humanoid.WalkSpeed==(18))) then game.Players.LocalPlayer.Character.Humanoid.WalkSpeed=16 ;elseif (_G.SpeedHack and (game.Players.LocalPlayer.Character.Humanoid.WalkSpeed==(17))) then game.Players.LocalPlayer.Character.Humanoid.WalkSpeed=18;elseif (_G.SpeedHack and (game.Players.LocalPlayer.Character.Humanoid.WalkSpeed==(19) then game.Players.LocalPlayer.Character.Humanoid.WalkSpeed=20 ;elseif _G.SpeedHack then local v796=16 + game.Players.LocalPlayer.Character.Humanoid:GetAttribute("SpeedBoost") ;if (game.Players.LocalPlayer.Character.Humanoid.WalkSpeed<=v796) then game.Players.LocalPlayer.Character.Humanoid.WalkSpeed+=_G.SelectBoots end end end);end);
-Tab:AddSlider({
-	Name = "WalkSpeed",
-	Min = 1,
-	Max = 6,
-	Default = 1,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "Speed",
-	Callback = function(Value)
-  _G.SelectBootst = Value
-	end    
-})
-Tab:AddToggle({
-  Name = "Enable WalkSpeed",
-  Default = false,
-  Callback = function(Value)
-  _G.SpeedHack=Value;if (_G.SpeedHack==false) then game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Healthbar.Effects.SpeedBoost.Visible=false;elseif (_G.SpeedHack==true) then game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Healthbar.Effects.SpeedBoost.Visible=true;end end});
